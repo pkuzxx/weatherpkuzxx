@@ -132,7 +132,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
         setContentView(R.layout.weather_info);
 
 
-        MyApplication myapp = (MyApplication)getApplication();
+
 
 
 
@@ -196,6 +196,16 @@ public class MainActivity extends Activity implements View.OnClickListener, View
             @Override
             public void onClick(View v) {
                 mLocationClient.start();
+                MyApplication myapp = (MyApplication)getApplication();
+                List<City> listcity = myapp.getCityList();//存放数据库中城市信息
+                //该循环从城市信息中获取城市名称和相应城市代码
+                for(City c:listcity){
+                    if(c.getCity().equals(Const.city)){
+                        String citynumber = c.getNumber();
+                        queryWeatherCode(citynumber);
+
+                    }
+                }
             }
         });
     }
