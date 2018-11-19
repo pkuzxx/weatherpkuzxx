@@ -105,6 +105,12 @@ public class MainActivity extends Activity implements View.OnClickListener, View
 
 
 
+
+
+    private  ImageView p1,p2,p3,p4;
+
+
+
     private ImageView mUpdateBtn;
     private ImageView mCitySelect;
     private TextView cityTv, timeTv, humidityTv, weekTv, pmDataTv, pmQualityTv,
@@ -130,6 +136,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather_info);
+
 
 
 
@@ -483,6 +490,11 @@ return todayWeather;
 //此函数根据解析得到的数据更新今日天气
     void updateTodayWeather(TodayWeather todayWeather){
 
+
+            p1 = (ImageView)views1.get(0).findViewById(R.id.p11);
+            p2=(ImageView)views1.get(0).findViewById(R.id.p12);
+            p3 = (ImageView)views1.get(1).findViewById(R.id.p21);
+            p4 = (ImageView)views1.get(1).findViewById(R.id.p22);
             w11=(TextView)findViewById(R.id.w11);
             w12=(TextView)views1.get(0).findViewById(R.id.w12);
             w13=(TextView)views1.get(0).findViewById(R.id.w13);
@@ -511,10 +523,308 @@ return todayWeather;
             w23.setText(todayWeather.getType2());
             w33.setText(todayWeather.getType3());
             w43.setText(todayWeather.getType4());
-            w14.setText("风力"+todayWeather.getFengli1());
+
+        if(todayWeather.getType1()!=null){
+            switch(todayWeather.getType1()){
+                case "暴雪":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_baoxue);
+                    break;
+                case"暴雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_baoyu);
+                    break;
+                case "大暴雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_dabaoyu);
+                    break;
+                case "大雪":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_daxue);
+                    break;
+                case"大雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_dayu);
+                    break;
+                case "多云":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_duoyun);
+                    break;
+                case "雷阵雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_leizhenyu);
+                    break;
+                case"雷阵雨冰雹":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_leizhenyubingbao);
+                    break;
+                case "晴":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+                case "沙尘暴":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_shachenbao);
+                    break;
+                case"特大暴雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_tedabaoyu);
+                    break;
+                case "雾":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_wu);
+                    break;
+                case "小雪":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_xiaoxue);
+                    break;
+                case"小雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_xiaoyu);
+                    break;
+                case "阴":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_yin);
+                    break;
+                case "雨夹雪":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_yujiaxue);
+                    break;
+                case"阵雪":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_zhenxue);
+                    break;
+                case "阵雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_zhenyu);
+                    break;
+                case"中雪":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_zhongxue);
+                    break;
+                case "中雨":
+                    p1.setImageResource(R.drawable.biz_plugin_weather_zhongyu);
+                    break;
+                default:
+                    p1.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+            }
+        }
+
+
+
+        if(todayWeather.getType2()!=null){
+            switch(todayWeather.getType2()){
+                case "暴雪":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_baoxue);
+                    break;
+                case"暴雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_baoyu);
+                    break;
+                case "大暴雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_dabaoyu);
+                    break;
+                case "大雪":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_daxue);
+                    break;
+                case"大雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_dayu);
+                    break;
+                case "多云":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_duoyun);
+                    break;
+                case "雷阵雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_leizhenyu);
+                    break;
+                case"雷阵雨冰雹":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_leizhenyubingbao);
+                    break;
+                case "晴":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+                case "沙尘暴":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_shachenbao);
+                    break;
+                case"特大暴雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_tedabaoyu);
+                    break;
+                case "雾":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_wu);
+                    break;
+                case "小雪":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_xiaoxue);
+                    break;
+                case"小雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_xiaoyu);
+                    break;
+                case "阴":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_yin);
+                    break;
+                case "雨夹雪":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_yujiaxue);
+                    break;
+                case"阵雪":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_zhenxue);
+                    break;
+                case "阵雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_zhenyu);
+                    break;
+                case"中雪":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_zhongxue);
+                    break;
+                case "中雨":
+                    p2.setImageResource(R.drawable.biz_plugin_weather_zhongyu);
+                    break;
+                default:
+                    p2.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+            }
+        }
+
+
+
+        if(todayWeather.getType3()!=null){
+            switch(todayWeather.getType3()){
+                case "暴雪":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_baoxue);
+                    break;
+                case"暴雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_baoyu);
+                    break;
+                case "大暴雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_dabaoyu);
+                    break;
+                case "大雪":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_daxue);
+                    break;
+                case"大雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_dayu);
+                    break;
+                case "多云":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_duoyun);
+                    break;
+                case "雷阵雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_leizhenyu);
+                    break;
+                case"雷阵雨冰雹":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_leizhenyubingbao);
+                    break;
+                case "晴":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+                case "沙尘暴":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_shachenbao);
+                    break;
+                case"特大暴雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_tedabaoyu);
+                    break;
+                case "雾":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_wu);
+                    break;
+                case "小雪":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_xiaoxue);
+                    break;
+                case"小雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_xiaoyu);
+                    break;
+                case "阴":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_yin);
+                    break;
+                case "雨夹雪":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_yujiaxue);
+                    break;
+                case"阵雪":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_zhenxue);
+                    break;
+                case "阵雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_zhenyu);
+                    break;
+                case"中雪":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_zhongxue);
+                    break;
+                case "中雨":
+                    p3.setImageResource(R.drawable.biz_plugin_weather_zhongyu);
+                    break;
+                default:
+                    p3.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+            }
+        }
+
+
+
+        if(todayWeather.getType4()!=null){
+            switch(todayWeather.getType4()){
+                case "暴雪":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_baoxue);
+                    break;
+                case"暴雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_baoyu);
+                    break;
+                case "大暴雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_dabaoyu);
+                    break;
+                case "大雪":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_daxue);
+                    break;
+                case"大雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_dayu);
+                    break;
+                case "多云":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_duoyun);
+                    break;
+                case "雷阵雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_leizhenyu);
+                    break;
+                case"雷阵雨冰雹":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_leizhenyubingbao);
+                    break;
+                case "晴":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+                case "沙尘暴":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_shachenbao);
+                    break;
+                case"特大暴雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_tedabaoyu);
+                    break;
+                case "雾":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_wu);
+                    break;
+                case "小雪":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_xiaoxue);
+                    break;
+                case"小雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_xiaoyu);
+                    break;
+                case "阴":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_yin);
+                    break;
+                case "雨夹雪":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_yujiaxue);
+                    break;
+                case"阵雪":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_zhenxue);
+                    break;
+                case "阵雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_zhenyu);
+                    break;
+                case"中雪":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_zhongxue);
+                    break;
+                case "中雨":
+                    p4.setImageResource(R.drawable.biz_plugin_weather_zhongyu);
+                    break;
+                default:
+                    p4.setImageResource(R.drawable.biz_plugin_weather_qing);
+                    break;
+            }
+        }
+
+
+
+
+
+
+        w14.setText("风力"+todayWeather.getFengli1());
             w24.setText("风力"+todayWeather.getFengli2());
             w34.setText("风力"+todayWeather.getFengli3());
             w44.setText("风力"+todayWeather.getFengli4());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
