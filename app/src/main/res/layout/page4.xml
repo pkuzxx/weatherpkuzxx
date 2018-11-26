@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id ="@+id/page11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id = "@+id/w11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="日期"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id = "@+id/w21"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="日期"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+    </LinearLayout>>
+    <LinearLayout
+        android:id ="@+id/page12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/page11"
+        >
+        <TextView
+            android:id = "@+id/w12"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="温度"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id = "@+id/w22"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="温度"
+            android:gravity="center"
+
+
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+    </LinearLayout>>
+    <LinearLayout
+
+        android:id="@+id/picture1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/page12"
+        android:orientation="horizontal">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/p11"
+        android:layout_gravity="center"
+        android:src="@drawable/biz_plugin_weather_qing"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/p12"
+            android:layout_gravity="center"
+            android:src="@drawable/biz_plugin_weather_qing"/>
+    </LinearLayout>>
+
+
+
+
+
+    <LinearLayout
+        android:id ="@+id/page13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_below="@+id/picture1"
+        >
+        <TextView
+            android:id = "@+id/w13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="天气状况"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id = "@+id/w23"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="天气状况"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+    </LinearLayout>>
+    <LinearLayout
+        android:id ="@+id/page14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/page13"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id = "@+id/w14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="风力"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id = "@+id/w24"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="风力"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+    </LinearLayout>>
+</RelativeLayout>

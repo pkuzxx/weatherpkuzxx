@@ -67,8 +67,17 @@ public class SelectCity extends Activity implements View.OnClickListener{
                 AL.clear();
                 String temp = "";
                 Log.d("TAG",s.toString());
+                //自己写
+                String ss=s.toString().toLowerCase();
+                Log.d("TAG",ss);
+                //自己写
                 for(City city:listcity){
-                    if(city.getCity().contains(s.toString())){
+                    String pinyin = city.getAllFristPY();
+                    pinyin = pinyin.toLowerCase();
+                    if(pinyin.contains(ss)){
+                        AL.add(city.getCity());
+                    }
+                   else if(city.getCity().contains(s.toString())){
                         temp = city.getCity();
                         AL.add(temp);
                     }
